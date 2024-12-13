@@ -13,20 +13,15 @@ echo $num;
 // Q3 日付操作
 date_default_timezone_set('Asia/Tokyo');
 
-echo '現在時刻は'.date("Y\年m\月d\日　h\時i\分s\秒です。");
+echo '現在時刻は'.date("Y年m月d日 h時i分s秒") . 'です。';
 
 // Q4 条件分岐-1 if文
 $device = 'mac';
 
-if ($device === 'windows') {
-    echo '使用OSはwindowsです。';
-    
-} elseif ($device === 'mac') {
-    echo '使用OSはmacです。';
-    
+if ($device === 'windows' || $device === 'mac') {
+    echo '使用OSは' . $device . 'です。';
 } else {
     echo 'どちらでもありません';
-    
 }
 
 // Q5 条件分岐-2 三項演算子
@@ -100,11 +95,11 @@ echo $price.'円の商品の税込価格は'.$taxInPrice.'円です。';
 function distinguishNum($num)
 {
     $message = ($num % 2 === 0) ? '偶数' : '奇数';
-    echo $num.'は'.$message.'です。'."\n";
+    return $num.'は'.$message.'です。'."\n";
 }
 
-distinguishNum(100);
-distinguishNum(101);
+echo distinguishNum(100);
+echo distinguishNum(101);
 
 // Q13 関数とswitch文
 function evaluateGrade($point)
